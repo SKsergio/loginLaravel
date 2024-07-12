@@ -17,9 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('registrate', 'content.registrate')->name('registrate');
-Route::view('login', 'content.login')->name('login');
-Route::view('contenido', 'content.contenido')->name('contenido');
+
+//Now we use middleware to protect the access to routes
+Route::view('registrate', 'content.registrate')->middleware('guest')->name('registrate');
+Route::view('login', 'content.login')->middleware('guest')->name('login');//If you don't log in, you won't be able to access these routes
+
+Route::view('contenido', 'content.contenido')->middleware('auth')->name('contenido'); //methos auth check if we have an active session
 
 // Register route
 Route::post('registro', [LoginController::class, 'register'])->name('Login.registrar');

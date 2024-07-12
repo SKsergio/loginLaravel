@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 
 class LoginController extends Controller
 {
@@ -33,7 +34,23 @@ class LoginController extends Controller
         return redirect()->route('contenido'); //redirijir a una nueva pagina
     }
     //method to login
-    public function login(){
+    public function login(Request $request){
+        $credenciales = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        $remember =($request->has('remember') ? true : false);
+
+        if (Auth::attempt($credenciales, $remember)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('contenido');
+        }else{
+            return back()->withErrors([
+                'email' => 'Las credenciales ingresadas no son correctas'
+            ])->onlyInput('email');
+        }
 
     }
     //method to logout

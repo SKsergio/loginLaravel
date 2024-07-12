@@ -45,6 +45,10 @@
                 <div class="container_buttons">
                     <input type="submit" value="Enviar" class="btn my-3">
                 </div>
+
+                @error('email')
+                    <div class="bg-red-700 text-white">Error: {{$message}}</div>
+                @enderror
                
                 
             </form>
