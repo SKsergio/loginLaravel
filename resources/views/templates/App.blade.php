@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('../resources/css/normalice.css')}}">
     <link rel="stylesheet" href="{{asset('../resources/css/layaout.css')}}">
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
     @stack('css')
 </head>
 <body >

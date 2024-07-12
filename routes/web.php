@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::view('registrate', 'content.registrate')->name('registrate');
 Route::view('login', 'content.login')->name('login');
 Route::view('contenido', 'content.contenido')->name('contenido');
+
+// Register route
+Route::post('registro', [LoginController::class, 'register'])->name('Login.registrar');
+Route::post('login', [LoginController::class, 'login'])->name('Login.login');
+Route::get('logout', [LoginController::class, 'destroy'])->name('Login.destroy');

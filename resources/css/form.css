@@ -17,23 +17,21 @@
 .form_course_register{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 36%;
-    height: 45%;
+    height: 90%;
     margin: 0 auto;
     border: 3px solid var(--color-white);
     backdrop-filter: blur(3px);
     border-radius: 20px;
     padding: 10px;
-    justify-content: center;
-    align-items: center;
 }
 /* contenedores */
 .container_inputs{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
     margin: 25px;
     color: black;
 }
@@ -119,4 +117,44 @@
 .link_register:hover{
     color: rgb(189, 218, 213);
 
+}
+/* otro formulario */
+.not_log{
+    height: 660px;
+    background-image: url(../img/henning-witzel-ukvgqriuOgo-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 61%;
+    margin: 0 auto;
+}
+.not_log .form_course_register{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 44%;
+    min-height: 65%;
+    max-height: 75%;;
+    border: 3px solid var(--color-white);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+.not_log .form_course_register .container_inputs{
+    margin: 5px;
+}
+.login_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    text-align: center;
 }

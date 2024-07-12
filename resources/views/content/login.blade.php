@@ -13,7 +13,7 @@
         <h1 class="my-9 text-5xl text-center">Login</h1>
 
         <div class="form_reg">
-            <form action="" method="POST" class="form_course_register">
+            <form action="{{route('Login.login')}}" method="POST" class="form_course_register">
                 @csrf
 
                 <div class="container_inputs">
@@ -36,7 +36,7 @@
     
                     <div class="input_box">
                         <p class="text_info">No tienes una cuenta?
-                            <a href="" class="link_register">Registrate aqui</a>
+                            <a href="{{route('registrate')}}" class="link_register">Registrate aqui</a>
                         </p>
                     </div>
 
