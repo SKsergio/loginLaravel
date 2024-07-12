@@ -10,12 +10,11 @@
 
 @section('content')
     <div class="container">
-        <h1 class="my-9 text-5xl text-center">Login</h1>
+        <h1 class="my-9 text-5xl text-center">Registrate</h1>
 
         <div class="form_reg">
             <form action="" method="POST" class="form_course_register">
                 @csrf
-
                 <div class="container_inputs">
                     <div class="input_box">
                         <input type="email" autocomplete="off" name="email" required class="input_file">
@@ -28,26 +27,26 @@
                         <span>Password</span>
                         <i></i>
                     </div>
-
-                    <div class="input_box">
-                        <input type="checkbox" name="remember" id="recordar">
-                        <label for="recordar" class="text_info cursor-pointer">Mantener Sesion Iniciada</label>
-                    </div>
-    
-                    <div class="input_box">
-                        <p class="text_info">No tienes una cuenta?
-                            <a href="" class="link_register">Registrate aqui</a>
-                        </p>
-                    </div>
-
                 </div>
 
                 <div class="container_buttons">
                     <input type="submit" value="Enviar" class="btn my-3">
                 </div>
-               
-                
             </form>
+
+            <div class="login">
+                <div class="input_box">
+                    <input type="checkbox" name="remember" id="recordar">
+                    <label for="recordar" class="text_info cursor-pointer">Mantener Sesion Iniciada</label>
+                </div>
+
+                <div class="input_box">
+                    <p class="text_info">No tienes una cuenta?
+                        <a href="" class="link_register">Registrate aqui</a>
+                    </p>
+                </div>
+
+            </div>
         </div>
     </div>
 @endsection

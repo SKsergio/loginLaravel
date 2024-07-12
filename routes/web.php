@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('registrate', 'content.registrate')->name('registrate');
+Route::view('login', 'content.login')->name('login');
+Route::view('contenido', 'content.contenido')->name('contenido');
